@@ -48,8 +48,22 @@ print("Number of ele equivalence classes:")
 print(len([x for cla in equv_classes for x in cla]))
 
 # Print all equivalence classes with more than a single element
+number_two = 0
+number_four = 0
 for cla in equv_classes:
-	if len(cla) > 1:
-		print(cla)
+	if len(cla) == 2:
+		number_two += 1
+	elif len(cla) == 4:
+		number_four += 1
 
+print("Number of equivalence classes of size 1:", end = ' ')
+print(len(equv_classes) - number_two - number_four)
 
+print("Number of equivalence classes of size 2:", end = ' ')
+print(number_two)
+
+print("Number of equivalence classes of size 4:", end = ' ')
+print(number_four)
+
+for cla in equv_classes:
+	print("Size: " + str(len(cla)) + "\nExample: " + str(cla[0]))
