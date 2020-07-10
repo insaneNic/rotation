@@ -8,12 +8,12 @@ ROTR = [6, 7, 0, 1, 2, 3, 4, 5]
 
 # Rotate a card left
 def rot_card_L(perm):
-    return apply(ROTL, perm)
+    return apply(ROTR, apply(perm, ROTL))
 
 
 # Rotate a card right
 def rot_card_R(perm):
-    return apply(ROTR, perm)
+    return apply(ROTL, apply(perm, ROTR))
 
 
 # Test if card A is rotationally equivalent to card B
@@ -35,19 +35,19 @@ def is_equiv(perm1, perm2):
 
 # Apply permutation to vector `vect`
 def apply(perm, vect):
-    return [vect[x] for x in perm]
+    return [perm[x] for x in vect]
 
 
 # Condition that no string can lead to itself
 def no_self(perm):
-    if compare_any(IDTY, apply(perm, IDTY)):
+    if compare_any(IDTY, perm):
         return False
     return True
 
 
 # Condition that evert string only has a single end
 def double_idty(perm):
-    if compare_all(IDTY, apply(perm, apply(perm, IDTY))):
+    if compare_all(IDTY, apply(perm, perm)):
         return True
     return False
 
