@@ -10,11 +10,13 @@ ROTR = [6, 7, 0, 1, 2, 3, 4, 5]
 def rot_card_L(perm):
     return apply(ROTL, perm)
 
+
 # Rotate a card right
 def rot_card_R(perm):
     return apply(ROTR, perm)
 
 
+# Test if card A is rotationally equivalent to card B
 def is_equiv(perm1, perm2):
     if compare_all(perm1, perm2):
         return True
@@ -31,22 +33,26 @@ def is_equiv(perm1, perm2):
     return False
 
 
+# Apply permutation to vector `vect`
 def apply(perm, vect):
     return [vect[x] for x in perm]
 
 
+# Condition that no string can lead to itself
 def no_self(perm):
     if compare_any(IDTY, apply(perm, IDTY)):
         return False
     return True
 
 
+# Condition that evert string only has a single end
 def double_idty(perm):
     if compare_all(IDTY, apply(perm, apply(perm, IDTY))):
         return True
     return False
 
 
+# AND
 def compare_all(listA, listB):
     if len(listA) != len(listB):
         raise Exception("List lengths differ.")
@@ -56,6 +62,7 @@ def compare_all(listA, listB):
     return True
 
 
+# OR
 def compare_any(listA, listB):
     if len(listA) != len(listB):
         raise Exception("List lengths differ.")

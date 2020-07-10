@@ -22,8 +22,10 @@ for perm in itrt.permutations(IDTY):
 print("Number of all legal cards:")
 print(len(all_perm))
 
+# Initialize equivalence class list
 equv_classes = []
 
+# Sort all permutations into equivalence classes
 for perm in all_perm:
 	did_find = False
 	for cla in equv_classes:
@@ -35,14 +37,17 @@ for perm in all_perm:
 	if not did_find:
 		equv_classes.append([perm])
 
+# Print number of equivalence classes
 print("Number of equivalence classes:")
 print(len(equv_classes))
 
 
+# Print number of elements in all equivalence classes
+# This should be equal to number of all permutations
 print("Number of ele equivalence classes:")
 print(len([x for cla in equv_classes for x in cla]))
 
-
+# Print all equivalence classes with more than a single element
 for cla in equv_classes:
 	if len(cla) > 1:
 		print(cla)
