@@ -103,7 +103,12 @@ element that can commute with every other.
 Kind of. There is only a right-identity element. That mean only if you multiply this
 element from the right does it act as an identity. This element is: (4, 5, 6, 7, 0, 1, 2, 3)
 which is one of the five elements which is completely rotation invariant, i.e. it is
-in its own equivalence class.
+in its own equivalence class. Also it is worth noting that this element is only an identity
+up to our equivalence class! This means that right multiplying this element might
+rotate your card.
+
+Somewhat surprisingly this is actually the only right identity (apart from the identity
+element from the group of all permutations) using our simplified multiplication `x * y =  y ° x ° y`.
 
 
  

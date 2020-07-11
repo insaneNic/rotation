@@ -19,7 +19,7 @@ for perm in itrt.permutations(IDTY):
 	if no_self(perm) and double_idty(perm):
 		all_perm.append(perm)
 
-print("Number of all legal cards:")
+print("Number of all legal cards:", end = ' ')
 print(len(all_perm))
 
 # Initialize equivalence class list
@@ -38,13 +38,13 @@ for perm in all_perm:
 		equv_classes.append([perm])
 
 # Print number of equivalence classes
-print("Number of equivalence classes:")
+print("Number of equivalence classes:", end = ' ')
 print(len(equv_classes))
 
 
 # Print number of elements in all equivalence classes
 # This should be equal to number of all permutations
-print("Number of ele equivalence classes:")
+print("Number of ele equivalence classes:", end = ' ')
 print(len([x for cla in equv_classes for x in cla]))
 
 # Print all equivalence classes with more than a single element
@@ -98,3 +98,21 @@ for perm in all_repr:
 
 print("Number of elements in centralizer:", end = ' ')
 print(len(centralizer))
+
+# ---
+all_l_identities = []
+for perm in itrt.permutations(IDTY):
+	if all([is_equiv(x, mult(perm, x)) for x in all_repr]):
+		all_l_identities.append(perm)
+
+print("Number of right identities in all perm:", end = ' ')
+print(len(all_l_identities))
+
+# ---
+all_r_identities = []
+for perm in itrt.permutations(IDTY):
+	if all([is_equiv(x, mult(x, perm)) for x in all_repr]):
+		all_r_identities.append(perm)
+
+print("Number of right identities in all perm:", end = ' ')
+print(len(all_r_identities))
