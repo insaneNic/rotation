@@ -47,9 +47,44 @@ simply concatenate them and get another permutation. But it becomes apparent tha
 this is not the correct operation. Instead we will have to do the following, which
 will seem familiar to anyone who has taken group theory before:
 
-`*: Perm x Perm --> Perm ; x,y |--> y^{-1} ° x ° y`
+`*: A x Perm --> A ; x,y |--> y^{-1} ° x ° y`
+
+LEM: This operation is well defined. 
+
+Proof: Let `f` in `A`. Let `R` be in `Perm`. Since we know `f ° R (n) \= R(n)` we can be
+sure that `R^{-1} ° f ° R (n) \= n`.
+
+Next 
+<pre>
+(R^{-1} ° f ° R)^2 (n)
+= R^{-1} ° f ° R ° R^{-1} ° f ° R (n)
+= R^{-1} ° f ° f ° R (n)
+= R^{-1} ° R (n)
+= n
+</pre>
+
+And so both conditions are satisfied. [ ]
 
 By testing we can see that multiplication is exactly the operation we want. For left
 rotation it becomes `x * L = R ° x ° L` and similarly for right rotation. Notice that
 this operation is also well defined for all cards, and inparticular, due to restriction 1)
 we can simplify to `x * y =  y ° x ° y`.
+
+Now we can use the multiplication to define an equivalence relation ~ by saying any
+card that is in the orbit of `L` is equivalent. It is left as an exercise to the
+reader to prove that this is actually an equivalence relation.
+
+There are then many questions we can ask.
+
+- Is our multiplication abelian?
+
+No: in particular the Centralizer is empty. This means that there isn't even a single
+element that can commute with every other.
+
+- Is there an identity element in the set of cards with respect to our multiplication?
+
+Kind of. There is only a right-identity element. That mean only if you multiply this
+element from the right does it act as an identity.
+
+
+ 

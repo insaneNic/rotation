@@ -65,5 +65,36 @@ print(number_two)
 print("Number of equivalence classes of size 4:", end = ' ')
 print(number_four)
 
+all_repr = []
 for cla in equv_classes:
-	print("Size: " + str(len(cla)) + "\nExample: " + str(cla[0]))
+	all_repr.append(cla[0])
+
+# ---
+
+l_identities = []
+for perm in all_repr:
+	if all([is_equiv(x, mult(perm, x)) for x in all_repr]):
+		l_identities.append(perm)
+
+print("Number of left identities:", end = ' ')
+print(len(l_identities))
+
+# ---
+
+r_identities = []
+for perm in all_repr:
+	if all([is_equiv(x, mult(x, perm)) for x in all_repr]):
+		r_identities.append(perm)
+
+print("Number of right identities:", end = ' ')
+print(len(r_identities))
+
+# ---
+
+centralizer = []
+for perm in all_repr:
+	if all([is_equiv(mult(x, perm), mult(perm, x)) for x in all_repr]):
+		centralizer.append(perm)
+
+print("Number of elements in centralizer:", end = ' ')
+print(len(centralizer))
