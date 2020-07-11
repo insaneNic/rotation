@@ -76,7 +76,22 @@ Now we can use the multiplication to define an equivalence relation ~ by saying 
 card that is in the orbit of `L` is equivalent. It is left as an exercise to the
 reader to prove that this is actually an equivalence relation.
 
-There are then many questions we can ask.
+There are then many questions we can ask. Let me start with my original question:
+
+- How many possible cards are there?
+
+If we do not consider rotation there are 105 cards. Applying the equivalence class we 
+end up with 35. If we order them by class size we get the following:
+
+| Class size | Number of Classes |
+|------------|-------------------|
+| 1          | 5                 |
+| 2          | 10                |
+| 4          | 20                |
+
+Cards in class size 1 have full rotational symmetry. Cards in class size 2 have 180° rotational
+symmetry. And finally classes of size 4 means no rotational symmetry. There can not be a
+class of size three.
 
 - Is our multiplication abelian?
 
