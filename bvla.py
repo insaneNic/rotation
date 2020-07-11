@@ -38,6 +38,11 @@ def apply(perm, vect):
     return [perm[x] for x in vect]
 
 
+# A multiplication
+def mult(permA, permB):
+    return apply(permB, apply(permA, permB))
+
+
 # Condition that no string can lead to itself
 def no_self(perm):
     if compare_any(IDTY, perm):
