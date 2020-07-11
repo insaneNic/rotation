@@ -65,6 +65,8 @@ Next
 
 And so both conditions are satisfied. [ ]
 
+### Some more properties
+
 By testing we can see that multiplication is exactly the operation we want. For left
 rotation it becomes `x * L = R ° x ° L` and similarly for right rotation. Notice that
 this operation is also well defined for all cards, and inparticular, due to restriction 1)
