@@ -86,7 +86,9 @@ element that can commute with every other.
 - Is there an identity element in the set of cards with respect to our multiplication?
 
 Kind of. There is only a right-identity element. That mean only if you multiply this
-element from the right does it act as an identity.
+element from the right does it act as an identity. This element is: (4, 5, 6, 7, 0, 1, 2, 3)
+which is one of the five elements which is completely rotation invariant, i.e. it is
+in its own equivalence class.
 
 
  
