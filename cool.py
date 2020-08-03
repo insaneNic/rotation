@@ -105,7 +105,7 @@ for perm in itrt.permutations(IDTY):
 	if all([is_equiv(x, mult(perm, x)) for x in all_repr]):
 		all_l_identities.append(perm)
 
-print("Number of right identities in all perm:", end = ' ')
+print("Number of left identities in all perm:", end = ' ')
 print(len(all_l_identities))
 
 # ---
