@@ -45,7 +45,7 @@ to 90 degree turns to the left and right respectively. The question then becomes
 how do we apply these to our cards? Since permutations are bijective maps we can
 simply concatenate them and get another permutation. But it becomes apparent that
 this is not the correct operation. Instead we will have to do the following, which
-will seem familiar to anyone who has taken group theory before:
+will be familiar to anyone who has taken group theory before as conjugation:
 
 `*: A x Perm --> A ; x,y |--> y^{-1} ° x ° y`
 
